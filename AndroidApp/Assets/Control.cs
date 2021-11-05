@@ -18,7 +18,7 @@ public class Control : MonoBehaviour
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && Mathf.Abs(body.velocity.y) <= force)
             body.velocity = new Vector2(body.velocity.x, speed);
     }
 
