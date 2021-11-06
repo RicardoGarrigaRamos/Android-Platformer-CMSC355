@@ -29,12 +29,15 @@ public class Control : MonoBehaviour
         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
-        }        
+        }    
     }
 
     public void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, jumpForce);
+        if(IsGrounded())
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+        }
     }
 
     private bool IsGrounded()
